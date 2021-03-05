@@ -2,9 +2,8 @@
 
 Solución de los ejercicios propuestos.
 
-ALUMNOS:
+ALUMNO:
 * Alonso Bueno Herrero
-* Bartolomé Zambrana Pérez
 
 ## Ejercicio 1. Instalar el software DOSBox y ejecutar aplicaciones de MS-DOS (p.ej. juegos clásicos).
 
