@@ -28,7 +28,7 @@ Ahora, cada vez que arranquemos DOSBOX se ejecutarán estas líneas y tendremos 
 
 Vamos a ejecutar algún juego. He escogido el de VBALL, que hemos probado en clase. Para lanzarlo, basta con irse al directorio en que está, escribir su nombre en la línea de comandos y lanzarlo. Una captura de una partida que he realizado:
 
-![vball](vball.png)
+![vball](./vball.png)
 
 ## Ejercicio 2. Configurar el inicio de DOSBox para que monte en la unidad C: el directorio donde se encuentra el entorno de programación Borland C (que incluye las herramientas para compilar no sólo lenguaje C, sino también ensamblador). Añadir a la variable “PATH” de inicio el directorio “bin” donde se encuentra el ejecutable BC.EXE. 
 
@@ -47,4 +47,4 @@ C:\S1\ejemplos>c.bat hola
 
 Y la ejecución se muestra en la captura (junto a los resultados de la compilación):
 
-![Hola mundo](hola.png)
+![Hola mundo](./hola.png)
