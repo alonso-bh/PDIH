@@ -7,7 +7,10 @@ datos ends
 codigo segment 'code'
 	assume cs:codigo, ds:datos, ss:pila
 	main PROC
-		;imprimir N veces una cadena
+		mov ax,datos
+		mov ds,ax
+
+		;imprimir N veces una cadena (hasta aqui todo es igual)
 		mov cx,0
 		bucle:
 			mov dx,OFFSET msg
@@ -15,8 +18,11 @@ codigo segment 'code'
 			int 21h
 			;actualizar contador y comprobar condición
 			inc cx
-			cmp cx,5
+			cmp cx,7
 			jne bucle
+
+		mov ax,4c00h   ; terminar y salir
+		int 21h
 	main ENDP
 codigo ends
 

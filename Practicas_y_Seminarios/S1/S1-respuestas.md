@@ -15,9 +15,9 @@ Tras instalar el ejecutable, hay que abrir el fichero de configuración, ubicado
 # You can put your MOUNT lines here. 
 # (Alonso Bueno Herrero, 2021)
 
-# 1.- Poner en español
+# Poner en español
 keyb sp  
-# tareas del ejercicio 2 que ya he realizado yo aquí
+# montar directorio de trabajo al principio de cada sesión
 mount C C:\Users\UX430U\OneDrive\CUARTO_CURSO\PDIH\Practicas_y_Seminarios\bc
 path C:\bc\BIN
 ```
@@ -28,7 +28,7 @@ Ahora, cada vez que arranquemos DOSBOX se ejecutarán estas líneas y tendremos 
 
 Vamos a ejecutar algún juego. He escogido el de VBALL, que hemos probado en clase. Para lanzarlo, basta con irse al directorio en que está, escribir su nombre en la línea de comandos y lanzarlo. Una captura de una partida que he realizado:
 
-![vball](./vball.png)
+![vball](./vball.PNG)
 
 ## Ejercicio 2. Configurar el inicio de DOSBox para que monte en la unidad C: el directorio donde se encuentra el entorno de programación Borland C (que incluye las herramientas para compilar no sólo lenguaje C, sino también ensamblador). Añadir a la variable “PATH” de inicio el directorio “bin” donde se encuentra el ejecutable BC.EXE. 
 
@@ -39,7 +39,9 @@ Lo que se pide en este ejercicio ya se ha resuelto en las dos últimas líneas d
 
 ## Ejercicio 3. Crear el ejemplo “Hola mundo” en ensamblador, compilarlo y comprobar su funcionamiento. A continuación incluir un bucle para mostrar el mensaje 7 veces.
 
-Tras descargar los ficheros de prueba del Seminario, he ejecutado el script `hola.asm` disponible. Para la compilación, una vez configurado el *path* del emulador y demás, he usado también el fichero `c.bat`. Para la compilación de nuestro fichero se ha usado la línea siguiente:
+### Fichero `hola.asm` (holamundo clásico)
+
+Tras descargar los ficheros de prueba del Seminario, he ejecutado el script `hola.asm` disponible. Para la compilación, he usado también el fichero `c.bat`:
 
 ```
 C:\S1\ejemplos>c.bat hola
@@ -47,4 +49,42 @@ C:\S1\ejemplos>c.bat hola
 
 Y la ejecución se muestra en la captura (junto a los resultados de la compilación):
 
-![Hola mundo](./hola.png)
+![Captura: hola.png](./hola.PNG)
+
+### Programa holamundo que muestre el mensaje 7 veces
+
+El código se muestra a continuación. Ha bastado modificar el código del `hola.asm` tal que se ejecute el bucle especificado en el documento del Seminario 1. La compilación y ejecución se muestran en la captura que hay bajo el código.
+
+```
+pila segment stack 'stack'
+	dw 100h dup (?)
+pila ends
+datos segment 'data'
+	msg db 'hola$'
+datos ends
+codigo segment 'code'
+	assume cs:codigo, ds:datos, ss:pila
+	main PROC
+		mov ax,datos
+		mov ds,ax
+
+		;imprimir N veces una cadena (hasta aqui todo es igual)
+		mov cx,0
+		bucle:
+			mov dx,OFFSET msg
+			mov ah,9
+			int 21h
+			;actualizar contador y comprobar condición
+			inc cx
+			cmp cx,7
+			jne bucle
+
+		mov ax,4c00h   ; terminar y salir
+		int 21h
+	main ENDP
+codigo ends
+
+END main
+``` 
+
+![Captura: holax7.png](./holax7.PNG)
