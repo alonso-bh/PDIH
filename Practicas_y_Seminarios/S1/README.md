@@ -26,9 +26,14 @@ Y una vez hechas esas modificaciones del fichero de configuración, lo guardamos
 
 Ahora, cada vez que arranquemos DOSBOX se ejecutarán estas líneas y tendremos nuestro *path* listo y también nuestra carpeta de trabajo (donde está `bc`) montada. 
 
+La comprobación de que nuestro DOSBOX arranca correctamente se puede ver en la figura siguiente:
+
+![Captura: hola.png](imagenes/captura-ok.PNG)
+
+
 Vamos a ejecutar algún juego. He escogido el de VBALL, que hemos probado en clase. Para lanzarlo, basta con irse al directorio en que está, escribir su nombre en la línea de comandos y lanzarlo. Una captura de una partida que he realizado:
 
-![vball](./vball.PNG)
+![vball](imagenes/vball.PNG)
 
 ## Ejercicio 2. Configurar el inicio de DOSBox para que monte en la unidad C: el directorio donde se encuentra el entorno de programación Borland C (que incluye las herramientas para compilar no sólo lenguaje C, sino también ensamblador). Añadir a la variable “PATH” de inicio el directorio “bin” donde se encuentra el ejecutable BC.EXE. 
 
@@ -36,6 +41,7 @@ Lo que se pide en este ejercicio ya se ha resuelto en las dos últimas líneas d
 
 1. Para configurar el inicio y que se monte en C: la carpeta padre de mi `bc` se usa la sentencia `mount C C:\Users\UX430U\OneDrive\CUARTO_CURSO\PDIH\Practicas_y_Seminarios\bc`.
 2. Para fijar el path hacia el ejecutable del compilador, se usa `path C:\bc\BIN`, siendo `BIN` la carpeta de `bc` que contenía el ejecutable, tal y como lo descargué de SWAD.
+
 
 ## Ejercicio 3. Crear el ejemplo “Hola mundo” en ensamblador, compilarlo y comprobar su funcionamiento. A continuación incluir un bucle para mostrar el mensaje 7 veces.
 
@@ -49,7 +55,7 @@ C:\S1\ejemplos>c.bat hola
 
 Y la ejecución se muestra en la captura (junto a los resultados de la compilación):
 
-![Captura: hola.png](./hola.PNG)
+![Captura: hola.png](imagenes/hola.PNG)
 
 ### Programa *holamundo* que muestre el mensaje 7 veces
 
@@ -87,4 +93,4 @@ codigo ends
 END main
 ``` 
 
-![Captura: holax7.png](./holax7.PNG)
+![Captura: holax7.png](imagenes/holax7.PNG)
