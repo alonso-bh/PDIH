@@ -51,7 +51,7 @@ Y la ejecución se muestra en la captura (junto a los resultados de la compilaci
 
 ![Captura: hola.png](./hola.PNG)
 
-### Programa holamundo que muestre el mensaje 7 veces
+### Programa *holamundo* que muestre el mensaje 7 veces
 
 El código se muestra a continuación. Ha bastado modificar el código del `hola.asm` tal que se ejecute el bucle especificado en el documento del Seminario 1. La compilación y ejecución se muestran en la captura que hay bajo el código.
 
