@@ -25,7 +25,7 @@ void gotoxy(int x, int y){
 }
 ```
 
-### setcursortype()
+### `setcursortype()` 
 
 Fijar uno de los 3 tipos de cursores disponibles. 
 
@@ -33,7 +33,7 @@ Fijar uno de los 3 tipos de cursores disponibles.
 
 ```
 
-### setvideomode(BYTE modo) 
+### `setvideomode(BYTE modo)`
 
 Para establecer el modo de vídeo a usar. Para ver los modos válidos, repasar tabla del guión de la Práctica 1.
 
