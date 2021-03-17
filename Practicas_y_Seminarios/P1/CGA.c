@@ -1,25 +1,26 @@
-/*****************************************************************************/
-// PERIFÉRICOS Y DISPOSITIVOS DE INTERFAZ HUMANA
-// GRADO EN INGENIERÍA INFORMÁTICA
-//
-// ALONSO BUENO HERRERO, BARTOLOMÉ ZAMBRANA PÉREZ
-//
-// CURSO 2020/21
-// Práctica 1. E/S con interrupciones en lenguaje C
-//
 /**
  * Implementar en lenguaje C un programa 
  * que establezca modo gráfico CGA para 
  * crear dibujos sencillos en pantalla.
  * 
 */
-/*****************************************************************************/
-
-
 
 #include <dos.h>
-#include "P1.h"  // adaptar la ruta de la biblioteca para que este include no dé errores
 
+
+void setvideomode( unsigned char modo){
+	union REGS inregs, outregs;
+	inregs.h.ah=0x00;
+	inregs.h.al=modo;
+
+	int86(0x10, &inregs, &outregs);
+}
+
+void pausa(){
+    union REGS inregs, outregs;
+    inregs.h.ah = 0x00;
+    int86(0x16,&inregs,&outregs);
+}
 
 void pixel(int x, int y, unsigned char color){
     union REGS inregs, outregs;
@@ -50,7 +51,7 @@ int main(){
         pixel(55,100+i,1);
     }
 
-    mi_pausa();
+    pausa(); //Pausamos para que se vea el dibujo en el modo CGA.
 
     setvideomode(3); //Modo texto;
     return 0;

@@ -1,12 +1,18 @@
 # Práctica 1: E/S con interrupciones en C
 
 Alumnos:
+
 * Alonso Bueno Herrero
 * Bartolomé Zambrana Pérez
 
+
+## Introducción.
+Para una mayor facilidad a la hora de ejecutar las funciones de ejemplo hemos implementado un menú, que se muestra en la siguiente captura:
+
+![Menu](./imagenes/Menu.png)
+
 ## Ejercicios obligatorios
 
-Desarrollo de las siguientes funciones:
 
 ### `gotoxy(x,y)` 
 
@@ -24,6 +30,9 @@ void gotoxy(int x, int y){
 	int86(0x10, &inregs, &outregs);
 }
 ```
+> Ejemplo de utilización de la función:
+
+![gotoxy](./imagenes/gotoxy.png)
 
 ### `setcursortype()` 
 
@@ -50,6 +59,9 @@ void setcursortype(int tipo_cursor){
 	int86(0x10, &inregs, &outregs);
 }
 ```
+> Ejemplo de utilización de la función:
+
+![setcursortype](./imagenes/setcursortype.png)
 
 ### `setvideomode(BYTE modo)`
 
@@ -66,6 +78,9 @@ void setvideomode(BYTE modo){
 }
 ```
 
+> Ejemplo de utilización de la función:
+
+![setvideomode](./imagenes/setvideomode.png)
 
 ###  `getvideotype()` 
 
@@ -84,6 +99,9 @@ int getvideomode(){
 }
 ```
 
+> Ejemplo de utilización de la función:
+
+![getvideomode](./imagenes/getvideomode.png)
 
 ### `textcolor()` 
 Modifica el color de primer plano con que se mostrarán los caracteres
@@ -97,6 +115,9 @@ void textcolor(int  color){
 	text_color = color;
 }
 ```
+> Ejemplo de utilización de la función:
+
+![textcolor](./imagenes/textcolor.png)
 
 ### `textbackground()`
 
@@ -111,6 +132,9 @@ void textbackground(int color){
 	background_color = color;
 }
 ```
+> Ejemplo de utilización de la función:
+
+![textbackground](./imagenes/textbackground.png)
 
 ### `clrscr()`
 
@@ -134,6 +158,9 @@ void clrscr(){
 	}
 }
 ```
+> Ejemplo de utilización de la función:
+
+![clrscr](./imagenes/clrscr.png)
 
 
 ### `cputchar()`
@@ -152,6 +179,11 @@ void cputchar(unsigned char c){
 }
 ```
 
+> Ejemplo de utilización de la función:
+
+![cputchar](./imagenes/cputchar.png)
+
+
 ### `getche()`
 
 Obtiene un carácter de teclado y lo muestra en pantalla.
@@ -165,12 +197,17 @@ printf("\n");
 }
 ```
 
+> Ejemplo de utilización de la función:
+
+![getche](./imagenes/getche.png)
+
+
 
 ## Ejercicios extra (para subir nota)
 
 ### Ejercicio 1
 
-La función para pintar el cuadrado se ha hecho mediante dos bucles que imprimen, por un lado, los lados horizontales, y por otro, los verticales.
+La función para pintar el cuadrado se ha hecho mediante dos bucles que imprimen los lados horizontales y  los verticales, respectivamente.
 
 ```C
 
@@ -182,36 +219,30 @@ void recuadro(int x1, int y1, int x2, int y2, int color_fondo, int color_fuente)
 
     
     for(i = 0; i <= (x2 - x1); i++){
-        //Horizontal Superior.
+        //Lateral derecha.
         gotoxy(x1 + i, y1);
-        cputchar('|');
+        cputchar('*');
 
-        //Horizontal Inferior.
+        //Lateral izquierda.
         gotoxy(x2 - i , y2);
-        cputchar('|');
+        cputchar('*');
     }
 
     for(j = 0; j <= (y2 - y1); j++){
-        //Linea izquierda.
+        //Horizontal superior.
         gotoxy(x1, y1 + j);
-        cputchar('-');
+        cputchar('*');
         
-        //Linea derecha
+        //Horizontal inferior
         gotoxy(x2, y2 - j);
-        cputchar('-');
+        cputchar('*');
     }
 }
 ```
 
-En el `main` se llama a la función especificando los parámetros necesarios (esquina superior izda e inferior dcha):
+> Ejemplo de utilización de la función:
 
-```C
-int main(){
-    clrscr();
-    recuadro(3,3,10,10,2,1);
-    printf("\n\n\n");
-}
-```
+![recuadro](./imagenes/recuadro.png)
 
 ### Ejercicio 2
 
@@ -258,3 +289,7 @@ int main(){
 }
 ```
 
+
+> Ejemplo de utilización de la función:
+
+![cga](./imagenes/cga.png)
