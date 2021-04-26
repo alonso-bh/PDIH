@@ -16,7 +16,7 @@ Nota: debido a que Fritzing, en su web, exigía pagar para descargar el software
 
 Esquema del circuito: 
 
-![ejercicio 1](ejer1.png)
+![ejercicio 1](ejer1.PNG)
 
 Componentes eléctricos usados:
 * Placa ARDUINO
@@ -32,7 +32,7 @@ Componentes eléctricos usados:
 
 Esquema del circuito:
 
-![ejercicio 2](ejer2.png)
+![ejercicio 2](ejer2.PNG)
 
 Componentes eléctricos usados:
 * Placa ARDUINO
