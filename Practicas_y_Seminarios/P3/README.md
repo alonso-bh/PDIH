@@ -75,6 +75,7 @@ Funcionamiento:
 
 Esquema del circuito:
 
+
 ![ejercicio 2](ejer2.PNG)
 
 Componentes eléctricos usados:
@@ -204,6 +205,7 @@ Funcionamiento:
 
 
 Esquema del circuito:
+
 ![extra2](extra2.PNG)
 
 
