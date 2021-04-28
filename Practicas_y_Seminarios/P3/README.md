@@ -68,6 +68,7 @@ void loop()
 
 Funcionamiento:
 
+![ej1](s3-ejercicio1.gif)
 
 
 ## SEMINARIO: Ejercicio 2: Parpadeo de LED con interruptor
@@ -140,9 +141,7 @@ void loop()
 
 Funcionamiento:
 
-<video width="320" height="240" controls>
-  <source src="s3-ejercicio2.mp4" type="video/mp4">
-</video>
+![ej2](s3-ejercicio2.gif)
 
 
 ## PROYECTO EXTRA 1: Secuencia de LEDs, encendiendo y apagando 4 LEDs secuencialmente, de forma similar a las lucecitas de "El coche fantástico"
@@ -199,7 +198,7 @@ void loop()
 
 Funcionamiento:
 
-(ver vídeo *extra1.mp4*, en la carpeta actual)
+![extra1](extra1.gif)
 
 ## PROYECTO EXTRA 2: Alarma por detección de presencia.
 
@@ -239,4 +238,4 @@ void loop()
 
 Funcionamiento:
 
-(ver vídeo *extra2.mp4*, en la carpeta actual)
+![extra2](extra2.gif)
