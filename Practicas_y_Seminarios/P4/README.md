@@ -1,12 +1,16 @@
 # P4 - Postscript
 
+Elaborado por:
+
+* ALONSO BUENO HERRERO
+* BARTOLOMÉ ZAMBRANA PÉREZ 
 
 ## Ejercicio 1
 
 ### Código Postscript
 
+```
 %!PS
-
 %% Inicializamos el objeto que vamos a dibujar.
 
 	%%Dibujamos un triángulo (techo)
@@ -142,6 +146,7 @@
 
 %% Dibujamos la página.
 showpage
+```
 
 ### Resultado
 
@@ -162,11 +167,13 @@ showpage
 32 scalefont % Scale the font to 20 points
 setfont % Make it the current font
 
-newpath % Start a new path
+% Dibujar el texto
+newpath 
 
 250 420  moveto
 (SEGUROS "LA NACIONAL" ) show 
 
+% cambiar letra a regular (no negrita) para el resto de datos 
 /Times-Roman findfont % Get the basic font
 30 scalefont % Scale the font to 20 points
 setfont % Make it the current font
@@ -180,6 +187,7 @@ setfont % Make it the current font
 250 220 moveto
 (Telf. 910 XXX XXX / Fax: 910 XXX XXX) show
 
+% cambiar letra a negrita-cursiva para la web
 /Times-BoldItalic findfont % Get the basic font
 30 scalefont % Scale the font to 20 points
 setfont % Make it the current font
@@ -188,16 +196,18 @@ setfont % Make it the current font
 (lanacional.es) show
 
 % dibujar circunferencia
-  140 335 moveto
+  140 335 moveto   
 % x y R angI angF
   140 335 70 0 360 arc  
-0.5 0 0.5 setrgbcolor
+0.5 0 0.5 setrgbcolor   % rellenar circunferencia
 fill
 
-stroke
+stroke    % fin
 
-showpage
+showpage   % imprime  
 ```
+
+(Nota: todos los nombres propios de personas (físicas o jurídicas) aquí presentes son meras invenciones usadas para ilustrar la resolución de los ejercicios. Todo parecido con la realidad es pura coincidencia.) 
 
 ### Resultado
 
