@@ -78,6 +78,9 @@ sicutECO@left <- 10000 * sicutECO@left
 # listen(sicutECO , f= 22050)
 # str(sicutECO)
 
+# dar la vuelta al sonido
 alreves <- revw(sicutECO, output = "Wave")
+
+# escribir en un nuevo WAV el resultado
 writeWave(alreves, file.path("S-varios-sonidos/alreves.wav"))
 
